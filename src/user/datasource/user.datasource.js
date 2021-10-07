@@ -12,6 +12,7 @@ class UserClient extends RESTDataSource {
       name: user.name,
       active: user.active,
       role: await this.findRoleById(user.role),
+      createdAt: user.createdAt,
     })));
   }
 
@@ -21,6 +22,7 @@ class UserClient extends RESTDataSource {
       name: user.name,
       active: user.active,
       role: await this.findRoleById(user.role),
+      createdAt: user.createdAt,
     }));
   }
 
@@ -39,9 +41,12 @@ class UserClient extends RESTDataSource {
 
     const [role] = await this.findRoleByType(user.role);
 
+    user.createdAt = new Date();
+
     return this.post('/users', {
       name: user.name,
       email: user.email,
+      createdAt: user.createdAt,
       role: role.id,
       active: true,
     })
@@ -49,6 +54,7 @@ class UserClient extends RESTDataSource {
         ...user,
         active: true,
         role,
+        createdAt: user.createdAt,
       }));
   }
 

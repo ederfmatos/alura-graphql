@@ -1,4 +1,18 @@
+const { GraphQLScalarType } = require('graphql');
+
 const UserResolvers = {
+  RoleType: {
+    STUDY: 'ESTUDANTE',
+    OWNER: 'DOCENTE',
+    MANAGER: 'COORDENACAO',
+  },
+  DateTime: new GraphQLScalarType({
+    name: 'DateTime',
+    description: 'Data e Hora ISO-8601',
+    serialize: (value) => new Date(value).toISOString(),
+    parseValue: (value) => new Date(value),
+    parseLiteral: ({ value }) => new Date(value),
+  }),
   Query: {
     /**
      *

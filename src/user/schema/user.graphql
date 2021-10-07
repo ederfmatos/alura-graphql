@@ -1,16 +1,25 @@
 const { gql } = require('apollo-server');
 
 const UserSchema = gql`
+scalar DateTime
+
   type User {
     name: String!
     active: Boolean!
     email: String
     role: Role!
+    createdAt: DateTime
+  }
+
+  enum RoleType {
+    STUDY
+    OWNER
+    MANAGER
   }
 
   type Role {
     id: ID!
-    type: String!
+    type: RoleType!
   }
 
   type Query {
@@ -22,14 +31,14 @@ const UserSchema = gql`
     createUser(
       name: String!, 
       email: String,
-      role: String!
+      role: RoleType!
     ): User!
 
     updateUser(
       id: ID!,
       name: String!, 
       email: String,
-      role: String!
+      role: RoleType!
     ): User!
 
     deleteUser(id: ID!): ID
