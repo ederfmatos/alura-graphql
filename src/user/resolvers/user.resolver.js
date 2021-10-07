@@ -10,6 +10,12 @@ const UserResolvers = {
     users: (_root, _args, context) => context.dataSources.userClient.findAllUsers(),
     user: (_, { id }, context) => context.dataSources.userClient.findUserById(id),
   },
+
+  Mutation: {
+    createUser: (root, user, context) => context.dataSources.userClient.createUser(user),
+    updateUser: (root, user, context) => context.dataSources.userClient.updateUser(user),
+    deleteUser: (root, { id }, context) => context.dataSources.userClient.deleteUser(id),
+  },
 };
 
 module.exports = { UserResolvers };

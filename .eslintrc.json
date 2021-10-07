@@ -11,6 +11,8 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "class-methods-use-this":"off",
+        "no-param-reassign": "off"
     }
 }
