@@ -8,6 +8,7 @@ class UserClient extends RESTDataSource {
 
   async findAllUsers() {
     return this.get('/users').then((users) => users.map(async (user) => ({
+      id: user.id,
       email: user.email,
       name: user.name,
       active: user.active,
@@ -18,6 +19,7 @@ class UserClient extends RESTDataSource {
 
   async findUserById(id) {
     return this.get(`/users/${id}`).then(async (user) => ({
+      id: user.id,
       email: user.email,
       name: user.name,
       active: user.active,
@@ -44,6 +46,7 @@ class UserClient extends RESTDataSource {
     user.createdAt = new Date();
 
     return this.post('/users', {
+      id: user.id,
       name: user.name,
       email: user.email,
       createdAt: user.createdAt,
@@ -58,9 +61,7 @@ class UserClient extends RESTDataSource {
       }));
   }
 
-  async updateUser({
-    id, name, email, role: newRole,
-  }) {
+  async updateUser(id, { name, email, role: newRole }) {
     const user = await this.findUserById(id);
 
     if (!user.active) {

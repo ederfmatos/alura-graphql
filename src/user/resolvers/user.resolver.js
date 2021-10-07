@@ -26,8 +26,8 @@ const UserResolvers = {
   },
 
   Mutation: {
-    createUser: (root, user, context) => context.dataSources.userClient.createUser(user),
-    updateUser: (root, user, context) => context.dataSources.userClient.updateUser(user),
+    createUser: (root, { user }, context) => context.dataSources.userClient.createUser(user),
+    updateUser: (_root, { user, id }, context) => context.dataSources.userClient.updateUser(id, user),
     deleteUser: (root, { id }, context) => context.dataSources.userClient.deleteUser(id),
   },
 };

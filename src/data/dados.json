@@ -2,10 +2,10 @@
   "users": [
     {
       "id": 2,
-      "name": "Ana Torre",
+      "email": "ederfmatos@gmail.com",
+      "name": "Eder Matos",
       "active": true,
-      "email": "a@a.com",
-      "role": 1
+      "role": 2
     },
     {
       "id": 2,
@@ -110,6 +110,38 @@
       "role": 3,
       "active": true,
       "id": 15
+    },
+    {
+      "name": "Eder Matos",
+      "email": "ederfmatos@gmail.com",
+      "createdAt": "2021-10-07T23:35:00.411Z",
+      "role": 3,
+      "active": true,
+      "id": 16
+    },
+    {
+      "name": "Eder Matos",
+      "email": "ederfmatos@gmail.com",
+      "createdAt": "2021-10-07T23:35:32.719Z",
+      "role": 3,
+      "active": true,
+      "id": 17
+    },
+    {
+      "name": "Eder Matos",
+      "email": "ederfmatos@gmail.com",
+      "createdAt": "2021-10-07T23:35:50.714Z",
+      "role": 3,
+      "active": true,
+      "id": 18
+    },
+    {
+      "name": "Eder Matos",
+      "email": "ederfmatos@gmail.com",
+      "createdAt": "2021-10-07T23:36:05.882Z",
+      "role": 3,
+      "active": true,
+      "id": 19
     }
   ],
   "roles": [

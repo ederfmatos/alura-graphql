@@ -4,11 +4,18 @@ const UserSchema = gql`
 scalar DateTime
 
   type User {
+    id: ID!
     name: String!
     active: Boolean!
     email: String
-    role: Role!
+    role: Role! 
     createdAt: DateTime
+  }
+
+  input UserInput {
+    name: String, 
+    email: String,
+    role: RoleType
   }
 
   enum RoleType {
@@ -28,18 +35,9 @@ scalar DateTime
   }
 
   type Mutation {
-    createUser(
-      name: String!, 
-      email: String,
-      role: RoleType!
-    ): User!
+    createUser(user: UserInput): User!
 
-    updateUser(
-      id: ID!,
-      name: String!, 
-      email: String,
-      role: RoleType!
-    ): User!
+    updateUser(id: ID!, user: UserInput): User!
 
     deleteUser(id: ID!): ID
   }
