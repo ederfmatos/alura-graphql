@@ -1,27 +1,6 @@
 {
   "users": [
     {
-      "id": 2,
-      "email": "ederfmatos@gmail.com",
-      "name": "Eder Matos",
-      "active": true,
-      "role": 2
-    },
-    {
-      "id": 2,
-      "name": "Gabriel Costa",
-      "active": true,
-      "email": "g@g.com",
-      "role": 1
-    },
-    {
-      "id": 3,
-      "name": "Flavia Lins",
-      "active": true,
-      "email": "f@f.com",
-      "role": 1
-    },
-    {
       "id": 4,
       "name": "Carlos Marques",
       "active": true,

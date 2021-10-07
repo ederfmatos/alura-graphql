@@ -85,7 +85,10 @@ class UserClient extends RESTDataSource {
 
   async deleteUser(id) {
     await this.findUserById(id);
-    return this.delete(`/users/${id}`).then(() => id);
+    return this.delete(`/users/${id}`).then(() => ({
+      code: 204,
+      message: 'Usuário deletado com sucesso',
+    }));
   }
 }
 

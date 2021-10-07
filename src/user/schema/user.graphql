@@ -39,7 +39,17 @@ scalar DateTime
 
     updateUser(id: ID!, user: UserInput): User!
 
-    deleteUser(id: ID!): ID
+    deleteUser(id: ID!): DeleteUserResponse
+  }
+
+  interface Response {
+    code: Int!
+    message: String!
+  }
+
+  type DeleteUserResponse implements Response {
+    code: Int!
+    message: String!
   }
 `
 
